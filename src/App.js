@@ -2,13 +2,17 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [riverVelocity, setRiverVelocity] = useState();
-  const [personVelocity, setPersonVelocity] = useState();
-  const [widthOfRiver, setWidthOfRiver] = useState();
-  const [angleOfSwim, setAngleOfSwim] = useState();
+  const [riverVelocity, setRiverVelocity] = useState('');
+  const [personVelocity, setPersonVelocity] = useState('');
+  const [widthOfRiver, setWidthOfRiver] = useState('');
+  const [angleOfSwim, setAngleOfSwim] = useState('');
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false)
+
 
   function calculation(e) {
     e.preventDefault();
+    setLoading(true);
     var sinvalue = null;
 
     switch (angleOfSwim) {
@@ -32,9 +36,11 @@ function App() {
     }
 
     console.log('singvalue', sinvalue)
-    var calculate = function () {
-      if (angleOfSwim === 90) {
+    function calculate() {
+
+      if (Number(angleOfSwim) === 90) {
         let time = widthOfRiver / personVelocity;
+        setData(time);
         console.log("time from 90 ", time.toFixed(2))
       } else if (angleOfSwim > 90 && angleOfSwim < 180) {
         console.log("large Angle")
@@ -106,6 +112,11 @@ function App() {
       </button>
         </div>
       </form>
+      <div>
+        <h1>
+          {loading ? ` Time takent to cross the river is  : ${data.toFixed(2)} s` : null}
+        </h1>
+      </div>
     </div>
   );
 }
