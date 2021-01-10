@@ -40,20 +40,14 @@ function App() {
 
       if (Number(angleOfSwim) === 90) {
         let time = widthOfRiver / personVelocity;
-        setData(time);
-        console.log("time from 90 ", time.toFixed(2))
+        setData(time.toFixed(2));
       } else if (angleOfSwim > 90 && angleOfSwim < 180) {
         console.log("large Angle")
-        let convertedAngle = 180 - angleOfSwim;
-        //         let convvertedSin = 
         let time = widthOfRiver / (personVelocity * sinvalue);
-        console.log(`time for ${convertedAngle} `, time.toFixed(2), "m/s")
-
-        //         console.log(`angleOfSwim is ${convertedAngle}`) ;     
+        setData(time.toFixed(2));
       } else if (angleOfSwim > 1 && angleOfSwim < 90) {
-        console.log('less angleOfSwim')
         let time = widthOfRiver / (personVelocity * sinvalue);
-        console.log(`time from less angleOfSwim ${angleOfSwim} ----${time.toFixed(2)}`)
+        setData(time.toFixed(2));
 
       }
     }
@@ -113,8 +107,8 @@ function App() {
         </div>
       </form>
       <div>
-        <h1>
-          {loading ? ` Time takent to cross the river is  : ${data.toFixed(2)} m/s` : null}
+        <h1 className='text'>
+          {loading ? ` Time takent to cross the river is  : ${data} m/s` : null}
         </h1>
       </div>
     </div>
