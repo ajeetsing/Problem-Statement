@@ -114,7 +114,7 @@ function App() {
       </form>
       <div>
         <h1>
-          {loading ? ` Time takent to cross the river is  : ${data.toFixed(2)} s` : null}
+          {loading ? ` Time takent to cross the river is  : ${data.toFixed(2)} m/s` : null}
         </h1>
       </div>
     </div>
