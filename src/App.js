@@ -1,9 +1,111 @@
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [riverVelocity, setRiverVelocity] = useState();
+  const [personVelocity, setPersonVelocity] = useState();
+  const [widthOfRiver, setWidthOfRiver] = useState();
+  const [angleOfSwim, setAngleOfSwim] = useState();
+
+  function calculation(e) {
+    e.preventDefault();
+    var sinvalue = null;
+
+    switch (angleOfSwim) {
+      case 0:
+        sinvalue = 0;
+        break;
+      case 30:
+        sinvalue = 1 / 2;
+        break;
+      case 45:
+        sinvalue = (1 / Math.sqrt(2)).toFixed(2);
+        break;
+      case 60:
+        sinvalue = (Math.sqrt(3) / 2).toFixed(2);
+        break;
+      case 90:
+        sinvalue = 1;
+        break;
+      default:
+        sinvalue = 3 / 5
+    }
+
+    console.log('singvalue', sinvalue)
+    var calculate = function () {
+      if (angleOfSwim === 90) {
+        let time = widthOfRiver / personVelocity;
+        console.log("time from 90 ", time.toFixed(2))
+      } else if (angleOfSwim > 90 && angleOfSwim < 180) {
+        console.log("large Angle")
+        let convertedAngle = 180 - angleOfSwim;
+        //         let convvertedSin = 
+        let time = widthOfRiver / (personVelocity * sinvalue);
+        console.log(`time for ${convertedAngle} `, time.toFixed(2), "m/s")
+
+        //         console.log(`angleOfSwim is ${convertedAngle}`) ;     
+      } else if (angleOfSwim > 1 && angleOfSwim < 90) {
+        console.log('less angleOfSwim')
+        let time = widthOfRiver / (personVelocity * sinvalue);
+        console.log(`time from less angleOfSwim ${angleOfSwim} ----${time.toFixed(2)}`)
+
+      }
+    }
+    calculate();
+
+  }
+
   return (
     <div className="App">
-      hello from ajeet singh thakur
+      <form className="form" onSubmit={calculation}>
+
+        <div>
+          <label htmlFor="Person Velocity">Person Velocity m/s</label>
+          <input
+            type="number"
+            placeholder="Person Velocity"
+            value={personVelocity}
+            required
+            onChange={(e) => setPersonVelocity(e.target.value)}
+          ></input>
+        </div>
+        <div>
+          <label htmlFor="River Velocity">River Velocity m/s</label>
+          <input
+            type="number"
+            placeholder="Enter River Velocity"
+            value={riverVelocity}
+            required
+            onChange={(e) => setRiverVelocity(e.target.value)}
+          ></input>
+        </div>
+        <div>
+          <label htmlFor="Angle of swim">Angle of swim Y degree</label>
+          <input
+            type="number"
+            placeholder="Enter Angle of swim"
+            value={angleOfSwim}
+            required
+            onChange={(e) => setAngleOfSwim(e.target.value)}
+          ></input>
+        </div>
+        <div>
+          <label htmlFor="Width of river">Width of river in meter</label>
+          <input
+            type="number"
+            placeholder="Enter Width of river in meter"
+            value={widthOfRiver}
+            required
+            onChange={(e) => setWidthOfRiver(e.target.value)}
+          ></input>
+        </div>
+        <div>
+          <label />
+          <button className="primary" type="submit">
+            calculate
+      </button>
+        </div>
+      </form>
     </div>
   );
 }
