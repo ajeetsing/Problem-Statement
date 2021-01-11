@@ -14,8 +14,13 @@ function App() {
     e.preventDefault();
     setLoading(true);
     var sinvalue = null;
+    if (angleOfSwim > 90 && angleOfSwim < 180) {
+      //for setting cos value 
+      setAngleOfSwim(180 - angleOfSwim);
+    }
 
     switch (angleOfSwim) {
+      //setting sin value oppiste to cos 
       case 0:
         sinvalue = 0;
         break;
@@ -41,14 +46,9 @@ function App() {
       if (Number(angleOfSwim) === 90) {
         let time = widthOfRiver / personVelocity;
         setData(time.toFixed(2));
-      } else if (angleOfSwim > 90 && angleOfSwim < 180) {
-        console.log("large Angle")
-        let time = widthOfRiver / (personVelocity * sinvalue);
-        setData(time.toFixed(2));
       } else if (angleOfSwim > 1 && angleOfSwim < 90) {
         let time = widthOfRiver / (personVelocity * sinvalue);
         setData(time.toFixed(2));
-
       }
     }
     calculate();
@@ -108,7 +108,7 @@ function App() {
       </form>
       <div>
         <h1 className='text'>
-          {loading ? ` Time takent to cross the river is  : ${data} m/s` : null}
+          {loading ? ` Time takent to cross the river is  : ${data} second` : null}
         </h1>
       </div>
     </div>
