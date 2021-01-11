@@ -16,8 +16,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ```
 all angel will start form the right side 0 degree  front would be 90 and left is more then 90 
 ```
-![Screenshot](../image/image1.jpg)
-<img src="../image/image1.jpg">
+![Screenshot](../public/image/image1.jpg)
+<img src="../public/image/image1.jpg">
 #### Approach to solve a problem
 ![Screenshot](../image/image.jpg)
 <img src="../image/image.jpg">
