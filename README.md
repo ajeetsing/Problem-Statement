@@ -20,13 +20,13 @@ all angel will start form the right side 0 degree  front would be 90 and left is
 <img src="../public/image/image1.jpg">
 #### Approach to solve a problem
 ![Screenshot](../image/image.jpg)
-<img src="../image/image.jpg">
+<img src="../image/image.jpg"/>
 
 ![Screenshot](../image/image2.png)
-<img src="../image/image2.jpg">
+<img src="../image/image2.jpg"/>
 
 ![Screenshot](../public/image/image2.png)
-<img src="../public/image/image2.jpg">
+<img src="../public/image/image2.jpg"/>
 
 
 
