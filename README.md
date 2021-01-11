@@ -25,6 +25,9 @@ all angel will start form the right side 0 degree  front would be 90 and left is
 ![Screenshot](../image/image2.png)
 <img src="../image/image2.jpg">
 
+![Screenshot](../public/image/image2.png)
+<img src="../public/image/image2.jpg">
+
 
 
 
