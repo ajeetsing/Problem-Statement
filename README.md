@@ -18,8 +18,10 @@ all angel will start form the right side 0 degree  front would be 90 and left is
 ```
 ![Screenshot](./public/image/image1.jpg)
 
-#### Approach to solve a problem
+
+## Approach to solve a problem
 ![Screenshot](./public/image/image.jpg)
+
 
 
 ![Screenshot](./public/image/image2.png)
