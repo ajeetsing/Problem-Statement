@@ -39,8 +39,6 @@ function App() {
       default:
         sinvalue = 3 / 5
     }
-
-    console.log('singvalue', sinvalue)
     function calculate() {
 
       if (Number(angleOfSwim) === 90) {

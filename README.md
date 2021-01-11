@@ -11,14 +11,17 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
+
+## Angle to take 
 ```
 all angel will start form the right side 0 degree  front would be 90 and left is more then 90 
 ```
-## Angle to take 
 ![Screenshot](../image/image1.jpg)
 
 #### Approach to solve a problem
-![Screenshot](../image/image2.jpg)
+![Screenshot](../image/image.jpg)
+
+![Screenshot](../image/image2.png)
 
 
 
